@@ -1,1 +1,3 @@
 public/briefing-debriefing
+node_modules
+.env
