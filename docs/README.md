@@ -1,9 +1,11 @@
-<h1>
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Sascha-davidson/proof-of-concept/assets/112861160/9cbdcb0b-8743-4d28-8a32-68cfd2d0d09f">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Sascha-davidson/proof-of-concept/assets/112861160/9cbdcb0b-8743-4d28-8a32-68cfd2d0d09f" >
   <img alt="logo Simplecate" src="https://github.com/Sascha-davidson/proof-of-concept/assets/112861160/c46b91bb-0999-4c04-9b3f-17fe2c96f309">
 </picture>
-</h1>
+
+# Narrowcasting app voor simplicate
+
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
 ## Inhoudsopgave
