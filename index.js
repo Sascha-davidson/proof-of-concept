@@ -7,7 +7,7 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 app.get('/', function (request, response) {
-    response.render('index', {active: '/'})
+    response.render('index')
   })
 
 app.set("port", process.env.PORT || 7000);
