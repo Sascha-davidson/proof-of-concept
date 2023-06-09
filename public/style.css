@@ -41,7 +41,7 @@
 }
 
 :root {
-  --small-gap: .5em;
+  --small-gap: 0.5em;
   --medium-gap: 1em;
   --large-gap: 2em;
   --extra-large-gap: 3em;
@@ -63,6 +63,7 @@ html,
 body {
   font-size: var(--font-size);
   font-family: var(--font-family);
+  infinite:	height: 100vh;
 }
 
 body {
@@ -76,15 +77,50 @@ body {
 }
 
 body > .background {
-  display: block;
-  background-color: orange;
+  background: rgb(122, 241, 176);
+  background: linear-gradient(315deg, 
+  rgba(135,206,235,1) 0%, 
+  rgba(122,241,176,1) 20%, 
+  rgba(209,255,127,1) 40%, 
+  rgba(255,75,127,1) 60%, 
+  rgba(135,206,235,1) 80%, 
+  rgba(122,241,176,1) 100%);
   position: absolute;
-  height: 100%;
-  width: 200%;
+  height: 100vh;
+  width: 100vw;
   top: 0;
   left: 0;
   z-index: -1;
+  background-size: 500% 500%;
+  animation: animate 300s infinite;
 }
+
+@keyframes animate {
+  0%{
+    background-position: 0% 0%;
+  }
+
+  20%{
+    background-position: 100% 100%;
+  }
+
+  40%{
+    background-position: 200% 200%;
+  }
+
+  60%{
+    background-position: 300% 300%;
+  }
+
+  80%{
+    background-position: 400% 400%;
+  }
+
+  100%{
+    background-position: 500% 500%;
+  }
+}
+
 
 .page-content {
   display: flex;
@@ -98,11 +134,12 @@ header {
   display: flex;
   gap: var(--medium-gap);
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 header .logo-container svg {
   height: 100%;
+  max-height: 80px;
 }
 
 header nav {
@@ -114,9 +151,11 @@ header nav {
 header nav ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-
+  aspect-ratio: 4/1;
   width: fit-content;
   justify-content: space-between;
+  position: relative;
+  width: 100%;
 }
 
 header nav li {
@@ -124,39 +163,88 @@ header nav li {
   z-index: 2;
 }
 
-header nav li button{
-  display: grid;
-  gap: var(--small-gap);
-  padding: 0.5em;
+header nav ul > .background {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  position: absolute;
+  height: 100%;
+  width: 25%;
+  top: 0;
+  left: 0;
+  animation: manu-animate 240s infinite;
 
-  width: 100%;
+}
+
+@keyframes manu-animate {
+  0%{
+    transform: translateX(0%);
+  }
+
+  23%{
+    transform: translateX(0%);
+  }
+
+  24%{
+    transform: translateX(100%);
+  }
+
+  47%{
+    transform: translateX(100%);
+  }
+
+  48%{
+    transform: translateX(200%);
+  }
+
+  71%{
+    transform: translateX(200%);
+  }
+
+  72%{
+    transform: translateX(300%);
+  }
+
+  95%{
+    transform: translateX(300%);
+  }
+
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+header nav li button {
+  padding: 0.5em;
   border: none;
   background: none;
   font-size: 1em;
+  width: 100%;
+  cursor: pointer;
 }
 
-header nav li svg{
-  height: 3em;
-}
-
-header nav li span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+header nav li svg {
+  height: 100%;
 }
 
 .content-container {
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  /* box-shadow: 0 0 7px 7px rgba(255, 255, 255, 0.5); */
 }
 
-@media (min-width: 600px) {
+@media (min-width: 550px) {
   header {
-    flex-wrap: nowrap;
+    flex-direction: row;
   }
 
   header nav ul {
     justify-content: flex-end;
+    width: auto;
+  }
+
+  header nav li svg {
+    height: 3em;
   }
 }
