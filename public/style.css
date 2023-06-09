@@ -1,0 +1,162 @@
+@font-face {
+  font-family: Medium;
+  src: url("../fonts/FiraSans/FiraSans-Medium.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Light;
+  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Extra Light Italic;
+  src: url("../fonts/FiraSans/FiraSans-ExtraLightItalic.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Book;
+  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Book Italic;
+  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Bold;
+  src: url("../fonts/FiraSans/FiraSans-Bold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Regular;
+  src: url("../fonts/FiraSans/FiraSans-Regular.ttf");
+  font-display: swap;
+}
+
+:root {
+  --small-gap: .5em;
+  --medium-gap: 1em;
+  --large-gap: 2em;
+  --extra-large-gap: 3em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+body > .background {
+  display: block;
+  background-color: orange;
+  position: absolute;
+  height: 100%;
+  width: 200%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--medium-gap);
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  gap: var(--medium-gap);
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header .logo-container svg {
+  height: 100%;
+}
+
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  width: fit-content;
+  justify-content: space-between;
+}
+
+header nav li {
+  list-style-type: none;
+  z-index: 2;
+}
+
+header nav li button{
+  display: grid;
+  gap: var(--small-gap);
+  padding: 0.5em;
+
+  width: 100%;
+  border: none;
+  background: none;
+  font-size: 1em;
+}
+
+header nav li svg{
+  height: 3em;
+}
+
+header nav li span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+@media (min-width: 600px) {
+  header {
+    flex-wrap: nowrap;
+  }
+
+  header nav ul {
+    justify-content: flex-end;
+  }
+}
