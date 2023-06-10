@@ -1,53 +1,32 @@
-const displayTime = document.querySelector(".display-time");
-// Time
-function showTime() {
-  let time = new Date();
-  displayTime.innerText = time.toLocaleTimeString("en-US", { hour12: false });
-  setTimeout(showTime, 1000);
+const buttons = document.querySelectorAll(`button`)
+const menuBackground = document.querySelector(`body nav .background`);
+const background = document.querySelector(`body > .background`);
+const content = document.querySelector(`.content-container`)
+
+let backgoundPositions = [0, 25, 50, 75, 100];
+let contentPositions = [-0, -20, -40, -60, -80]
+let currentPosition = 0;
+let menuBackgroundPositions = [0, 100, 200, 300, 400]
+
+buttons.forEach (button => button.hidden = false)
+
+function NextPosition() {
+  currentPosition += 1;
+  if (currentPosition >= backgoundPositions.length) currentPosition = 0;
+  UpdateBackgroundPosition();
 }
 
-showTime();
-
-// Date
-function updateDate() {
-  let today = new Date();
-
-  // return number
-  let dayName = today.getDay(),
-    dayNum = today.getDate(),
-    month = today.getMonth(),
-    year = today.getFullYear();
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const dayWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  // value -> ID of the html element
-  const IDCollection = ["day", "daynum", "month", "year"];
-  // return value array with number as a index
-  const val = [dayWeek[dayName], dayNum, months[month], year];
-  for (let i = 0; i < IDCollection.length; i++) {
-    document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
-  }
+function SetPosition(newpostion) {
+  currentPosition = newpostion;
+  UpdateBackgroundPosition();
 }
 
-updateDate();
+function UpdateBackgroundPosition() {
+  background.style.backgroundPosition = backgoundPositions[currentPosition] + `% ` + backgoundPositions[currentPosition] + `%`;
+  menuBackground.style.transform = "translateX(" + menuBackgroundPositions[currentPosition] + "%)";
+  content.style.transform = "translateX(" + contentPositions[currentPosition] + "%)";
+}
+
+setInterval(() => {
+  NextPosition();
+}, 6000);
