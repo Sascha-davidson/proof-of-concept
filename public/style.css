@@ -1,45 +1,3 @@
-/* @font-face {
-  font-family: Medium;
-  src: url("../fonts/FiraSans/FiraSans-Medium.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Light;
-  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Extra Light Italic;
-  src: url("../fonts/FiraSans/FiraSans-ExtraLightItalic.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Book;
-  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Book Italic;
-  src: url("../fonts/FiraSans/FiraSans-Light.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Bold;
-  src: url("../fonts/FiraSans/FiraSans-Bold.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Regular;
-  src: url("../fonts/FiraSans/FiraSans-Regular.ttf");
-  font-display: swap;
-} */
-
 :root {
   --small-gap: 0.5em;
   --medium-gap: 1em;
@@ -208,17 +166,12 @@ header nav li svg {
   height: 100%;
   padding: 2rem;
   padding-top: 0;
-  transition: all 2s ease-in-out;
 }
 
 .content-container-js {
   width: 500%;
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 4rem;
-  height: 100%;
-  padding: 2rem;
-  padding-top: 0;
   transition: all 2s ease-in-out;
 }
 
