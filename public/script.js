@@ -1,8 +1,11 @@
-const buttons = document.querySelectorAll(`button`);
 const menuBackground = document.querySelector(`body nav .background`);
 const background = document.querySelector(`body > .background`);
 const content = document.querySelector(`.content-container`);
 const displayTime = document.querySelector(`.display-time`);
+const nav = document.querySelector(`header nav`);
+const nextSlide = document.querySelector(`.menu-text p`);
+const contentContainer = document.querySelector(`#content-container`);
+const h1 = document.querySelector(`h1`);
 
 let backgoundPositions = [0, 25, 50, 75, 100];
 let contentPositions = [-0, -20, -40, -60, -80];
@@ -10,10 +13,26 @@ let currentPosition = 0;
 let menuBackgroundPositions = [0, 100, 200, 300, 400];
 
 var incomeTicker = 60;
-var noSleep = new NoSleep();
 
-buttons.forEach((button) => (button.hidden = false));
-displayTime.hidden = false;
+if (h1){
+  h1.innerHTML = "Current page title";
+}
+
+if (contentContainer) {
+  contentContainer.classList.add("content-container-js");
+}
+
+if (displayTime) {
+  displayTime.hidden = false;
+}
+
+if (nav) {
+  nav.hidden = false;
+}
+
+if (nextSlide) {
+  nextSlide.hidden = false;
+}
 
 function NextPosition() {
   currentPosition += 1;
@@ -48,23 +67,3 @@ setInterval(() => {
     "Next slide: " + incomeTicker + " seconds";
   if (incomeTicker <= 0) incomeTicker = 60;
 }, 1000);
-
-function enableNoSleep() {
-  noSleep.enable();
-  document.removeEventListener("touchstart", enableNoSleep, false);
-}
-
-// var elem = document.getElementById(`body`);
-// setInterval(() => {
-//   function openFullscreen() {
-//     if (elem.requestFullscreen) {
-//       elem.requestFullscreen();
-//     } else if (elem.webkitRequestFullscreen) {
-//       /* Safari */
-//       elem.webkitRequestFullscreen();
-//     } else if (elem.msRequestFullscreen) {
-//       /* IE11 */
-//       elem.msRequestFullscreen();
-//     }
-//   }
-// }, 10);
