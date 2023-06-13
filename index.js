@@ -26,7 +26,7 @@ const apiOrganizations = fetch(baceUrl + organizations, requestGetOptions)
     console.log("error: " + error);
   });
 
-const apiperson = fetch(baceUrl + person, requestGetOptions)
+const apiPerson = fetch(baceUrl + person, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
     let json = JSON.parse(response);
@@ -42,7 +42,7 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 app.get("/", function (request, response) {
-  response.render("index", { apiOrganizations, apiPersons });
+  response.render("index", { apiOrganizations, apiPerson });
 });
 
 app.set("port", process.env.PORT || 7000);
