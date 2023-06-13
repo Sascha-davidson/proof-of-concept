@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: Medium;
   src: url("../fonts/FiraSans/FiraSans-Medium.ttf");
   font-display: swap;
@@ -38,7 +38,7 @@
   font-family: Regular;
   src: url("../fonts/FiraSans/FiraSans-Regular.ttf");
   font-display: swap;
-}
+} */
 
 :root {
   --small-gap: 0.5em;
