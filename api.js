@@ -1,15 +1,10 @@
-import express, { json, response } from "express";
-import "dotenv/config";
-
-const app = express();
-
 const baceUrl = "https://demofdnd.simplicate.nl/api/v2/crm";
 const organizations = `/organization`;
 const person = `/person`;
 
 var myHeaders = new Headers();
-myHeaders.append("Authentication-Key", process.env.simplicateApiKey);
-myHeaders.append("Authentication-Secret", process.env.simplicateApiSecret);
+myHeaders.append("Authentication-Key", "gS7sibGSth6GQfDkGdLx9AU8T3cj1DoB");
+myHeaders.append("Authentication-Secret", "eiZOT04oWOcQUg2XEzkiI42XyvNInifc");
 
 var requestGetOptions = {
   method: "GET",
@@ -35,17 +30,3 @@ const apiperson = fetch(baceUrl + person, requestGetOptions)
   .catch((error) => {
     console.log("error", error);
   });
-
-app.set("view engine", "ejs");
-app.set("views", "./views");
-
-app.use(express.static("public"));
-
-app.get("/", function (request, response) {
-  response.render("index", { apiOrganizations, apiPersons });
-});
-
-app.set("port", process.env.PORT || 7000);
-app.listen(app.get("port"), function () {
-  console.log(`application started on http://localhost:${app.get("port")}`);
-});
