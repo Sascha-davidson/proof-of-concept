@@ -3,6 +3,8 @@
   --medium-gap: 1em;
   --large-gap: 2em;
   --extra-large-gap: 3em;
+
+  --border-radius: .3em
 }
 
 *,
@@ -59,6 +61,7 @@ body > .background {
 h1 {
   font-size: 2em;
   white-space: nowrap;
+  font-weight: 500;
   font-size: clamp(1.5em, 6vw, 2em);
 }
 
@@ -69,6 +72,7 @@ header {
   gap: var(--small-gap);
   padding: 2rem;
   padding-bottom: 0;
+  font-size: 1.5em;
 }
 
 header .page-title {
@@ -93,6 +97,10 @@ header .menu-text {
   padding: 0.5em;
 }
 
+/* header .menu-text {
+
+} */
+
 header nav ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -110,7 +118,7 @@ header nav li {
 
 header nav ul > .background {
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   position: absolute;
   height: 100%;
   width: 20%;
@@ -126,15 +134,11 @@ header nav li button {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 }
 
 header nav li button:is(:hover, :focus) {
   background: rgba(255, 255, 255, 0.25);
-}
-
-header nav li svg {
-  /* height: 2.7em; */
 }
 
 .content-container {
@@ -145,6 +149,8 @@ header nav li svg {
   height: 100%;
   padding: 2rem;
   padding-top: 0;
+  overflow: auto;
+  font-size: 1.15em;
 }
 
 .content-container-js {
@@ -158,12 +164,13 @@ header nav li svg {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  padding: 2em;
+  border-radius: var(--border-radius);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: var(--medium-gap);
-} 
+  overflow: hidden;
+}
 
 .content-container-js .content-box-5 {
   grid-column-start: unset;
@@ -172,11 +179,77 @@ header nav li svg {
   grid-row-end: unset;
 }
 
-.content .person{
-
+.content-container .content-box-1 {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+  gap: var(--large-gap);
+  align-items: center;
 }
 
-@media (min-width: 550px) {
+.content-container-js .content-box-1 {
+  grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+}
+
+.content-container-js {
+  font-size: 1.5em;
+}
+
+.content .person-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  align-items: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 0.5em;
+}
+
+.content .person-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--medium-gap);
+  border-radius: 50em;
+  aspect-ratio: 1;
+  padding: 0.5rem;
+  width: 4em;
+  background-color: lightblue;
+}
+
+.content .person-birth-day span {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+@media (min-width: 435px) {
+  .content-container .content-box-1 {
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  }
+}
+
+@media (min-width: 640px) {
+  .content-container-js .content-box-1 {
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  }
+
+  .content-container-js {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 730px) {
+  .content-container .content-box-1 {
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  }
+}
+
+@media (min-width: 830px) {
+  .content-container-js .content-box-1 {
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  }
+}
+
+@media (min-width: 850px) {
   header {
     gap: var(--medium-gap);
   }
@@ -187,6 +260,7 @@ header nav li svg {
 
   header .logo-container svg {
     height: 100%;
+    min-height: 85px;
   }
 
   header .page-title {
@@ -203,9 +277,25 @@ header nav li svg {
   header nav li svg {
     height: 3em;
   }
+
+  .content .person-container {
+    flex-direction: row;
+  }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 915px) {
+  .content-container .content-box-1 {
+    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  }
+}
+
+@media (min-width: 1150px) {
+  .content-container-js .content-box-1 {
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  }
+}
+
+@media (min-width: 1400px) {
   header {
     flex-direction: row;
   }
@@ -228,6 +318,7 @@ header nav li svg {
 
   header nav li svg {
     height: auto;
+    min-height: 8var(--border-radius);
   }
 
   .content-container {
@@ -252,5 +343,16 @@ header nav li svg {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 4rem;
     transition: all 2s ease-in-out;
+  }
+
+  .content-container .content-box-1 {
+    grid-template-columns: repeat(auto-fit, minmax(23em, 1fr));
+  }
+}
+
+
+@media (min-width: 2070px) {
+  .content-container .content-box-1 {
+    grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
   }
 }
