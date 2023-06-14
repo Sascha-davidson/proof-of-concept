@@ -16,25 +16,28 @@ var requestGetOptions = {
   headers: myHeaders,
 };
 
-const apiOrganizations = fetch(baceUrl + organizations, requestGetOptions)
+let apiOrganizations;
+fetch(baceUrl + organizations, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
-    let json = JSON.parse(response);
-    // console.log(json);
+    apiOrganizations = JSON.parse(response);
   })
   .catch((error) => {
     console.log("error: " + error);
   });
-
-const apiPerson = fetch(baceUrl + person, requestGetOptions)
+  
+let apiPerson;
+fetch(baceUrl + person, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
-    let json = JSON.parse(response);
-    // console.log(json);
+    apiPerson = JSON.parse(response);
   })
   .catch((error) => {
     console.log("error", error);
   });
+
+  
+
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
