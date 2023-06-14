@@ -20,7 +20,7 @@ const apiOrganizations = fetch(baceUrl + organizations, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
     let json = JSON.parse(response);
-    console.log(json);
+    // console.log(json);
   })
   .catch((error) => {
     console.log("error: " + error);
@@ -30,7 +30,7 @@ const apiPerson = fetch(baceUrl + person, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
     let json = JSON.parse(response);
-    console.log(json);
+    // console.log(json);
   })
   .catch((error) => {
     console.log("error", error);
