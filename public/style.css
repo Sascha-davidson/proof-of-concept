@@ -4,7 +4,7 @@
   --large-gap: 2em;
   --extra-large-gap: 3em;
 
-  --border-radius: .3em
+  --border-radius: 0.3em;
 }
 
 *,
@@ -23,16 +23,15 @@ html,
 body {
   font-size: var(--font-size);
   font-family: var(--font-family);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
   position: relative;
-  height: 100vh;
-  height: 100svh;
+  overflow-x: hidden;
+
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   gap: 1em;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -49,7 +48,7 @@ body > .background {
     rgba(122, 228, 241, 1) 100%
   );
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   top: 0;
   left: 0;
@@ -60,7 +59,7 @@ body > .background {
 
 h1 {
   font-size: 2em;
-  white-space: nowrap;
+  white-space: wrap;
   font-weight: 500;
   font-size: clamp(1.5em, 6vw, 2em);
 }
@@ -216,6 +215,13 @@ header nav li button:is(:hover, :focus) {
   background-color: lightblue;
 }
 
+.content-container-js .content .person-birth-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75em;
+}
+
 .content .person-birth-day span {
   font-weight: 600;
   font-size: 1.2em;
@@ -225,9 +231,16 @@ header nav li button:is(:hover, :focus) {
   .content-container .content-box-1 {
     grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
   }
+
+  .content-container-js .content .person-birth-day {
+    font-size: 1em;
+  }
 }
 
 @media (min-width: 640px) {
+  header nav li svg {
+    height: 3em;
+  }
   .content-container-js .content-box-1 {
     grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
   }
@@ -274,22 +287,41 @@ header nav li button:is(:hover, :focus) {
     width: auto;
   }
 
-  header nav li svg {
-    height: 3em;
-  }
-
   .content .person-container {
     flex-direction: row;
   }
+
+  .content .person-birth-day {
+    align-items: flex-start;
+  }
+
+  .content-container-js .content .person-birth-day {
+    align-items: flex-start;
+  }
 }
 
-@media (min-width: 915px) {
+@media (min-width: 1024px) {
   .content-container .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
   }
 }
 
 @media (min-width: 1150px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  body {
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  body > .background {
+    height: 100vh;
+  }
+
   .content-container-js .content-box-1 {
     grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   }
@@ -301,7 +333,7 @@ header nav li button:is(:hover, :focus) {
   }
 
   header nav {
-    height: 100%;
+    height: 91px;
     width: fit-content;
     aspect-ratio: 5/1;
     max-height: unset;
@@ -318,7 +350,7 @@ header nav li button:is(:hover, :focus) {
 
   header nav li svg {
     height: auto;
-    min-height: 8var(--border-radius);
+    min-height: 8var (--border-radius);
   }
 
   .content-container {
@@ -346,13 +378,12 @@ header nav li button:is(:hover, :focus) {
   }
 
   .content-container .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(23em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
   }
 }
 
-
-@media (min-width: 2070px) {
+@media (min-width: 2000px) {
   .content-container .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
   }
 }
