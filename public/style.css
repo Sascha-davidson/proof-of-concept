@@ -386,4 +386,8 @@ header nav li button:is(:hover, :focus) {
   .content-container .content-box-1 {
     grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
   }
+
+  .content-container-js .content-box-1 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
