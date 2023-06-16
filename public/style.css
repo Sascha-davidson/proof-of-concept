@@ -178,15 +178,18 @@ header nav li button:is(:hover, :focus) {
 }
 
 .content-container .content-box-1 {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
-  gap: var(--large-gap);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.content-container-js .content-box-1 {
-  grid-template-columns: repeat(auto-fit, minmax(7em, 1fr));
+.content-container .content-box-1 > div {
+  width: 100%;
+}
+
+.content-container .content-box-1 .birth-day-hylight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-container-js {
@@ -199,7 +202,7 @@ header nav li button:is(:hover, :focus) {
   gap: var(--small-gap);
   align-items: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 0.5em;
+  padding: 0.5em 0;
 }
 
 .content .person-avatar {
@@ -227,10 +230,6 @@ header nav li button:is(:hover, :focus) {
 }
 
 @media (min-width: 435px) {
-  .content-container .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-  }
-
   .content-container-js .content .person-birth-day {
     font-size: 1em;
   }
@@ -240,24 +239,9 @@ header nav li button:is(:hover, :focus) {
   header nav li svg {
     height: 3em;
   }
-  .content-container-js .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-  }
 
   .content-container-js {
     font-size: 2em;
-  }
-}
-
-@media (min-width: 730px) {
-  .content-container .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-  }
-}
-
-@media (min-width: 830px) {
-  .content-container-js .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
   }
 }
 
@@ -286,6 +270,15 @@ header nav li button:is(:hover, :focus) {
     width: auto;
   }
 
+  .content-container .content-box-1 {
+    flex-direction: column;
+  }
+
+  .content-container .content-box-1 .birth-day-hylight {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
   .content .person-container {
     flex-direction: row;
   }
@@ -296,12 +289,6 @@ header nav li button:is(:hover, :focus) {
 
   .content-container-js .content .person-birth-day {
     align-items: flex-start;
-  }
-}
-
-@media (min-width: 1024px) {
-  .content-container .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
   }
 }
 
@@ -319,10 +306,6 @@ header nav li button:is(:hover, :focus) {
 
   body > .background {
     height: 100vh;
-  }
-
-  .content-container-js .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   }
 }
 
@@ -362,6 +345,15 @@ header nav li button:is(:hover, :focus) {
     padding-top: 0;
   }
 
+  .content-container .content-box-1{
+    flex-direction: row;
+  }
+
+  .content-container .content-box-1 .birth-day-hylight {
+    align-items: center;
+    justify-content: center;
+  }
+
   .content-box-5 {
     grid-column-start: 3;
     grid-column-end: 4;
@@ -375,17 +367,9 @@ header nav li button:is(:hover, :focus) {
     gap: 4rem;
     transition: all 2s ease-in-out;
   }
-
-  .content-container .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-  }
 }
 
 @media (min-width: 2000px) {
-  .content-container .content-box-1 {
-    grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
-  }
-
   .content-container-js .content-box-1 {
     grid-template-columns: 1fr 1fr 1fr;
   }
