@@ -2,10 +2,16 @@ import express from "express";
 import "dotenv/config";
 
 const app = express();
+const baceUrl = "https://demofdnd.simplicate.nl/api/v2";
 
-const baceUrl = "https://demofdnd.simplicate.nl/api/v2/crm";
+const crm = `/crm`
+const sales = `/sales`
+const projects = `/projects`
+
 const organizations = `/organization`;
 const person = `/person`;
+const sale = `/sales`
+const project = `/project`
 
 var myHeaders = new Headers();
 myHeaders.append("Authentication-Key", process.env.simplicateApiKey);
@@ -17,7 +23,7 @@ var requestGetOptions = {
 };
 
 let apiOrganizations;
-fetch(baceUrl + organizations, requestGetOptions)
+fetch(baceUrl + crm + organizations, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
     apiOrganizations = JSON.parse(response);
@@ -27,7 +33,7 @@ fetch(baceUrl + organizations, requestGetOptions)
   });
   
 let apiPerson;
-fetch(baceUrl + person, requestGetOptions)
+fetch(baceUrl + crm + person, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
     apiPerson = JSON.parse(response);
@@ -35,8 +41,16 @@ fetch(baceUrl + person, requestGetOptions)
   .catch((error) => {
     console.log("error", error);
   });
-
   
+let apiProjects;
+  fetch(baceUrl + projects + project, requestGetOptions)
+  .then((response) => response.text())
+  .then((response) => {
+    apiProjects = JSON.parse(response);
+  })
+  .catch((error) => {
+    console.log("error", error);
+  });
 
 
 app.set("view engine", "ejs");
@@ -45,7 +59,7 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 app.get("/", function (request, response) {
-  response.render("index", { apiOrganizations, apiPerson });
+  response.render("index", { apiOrganizations, apiPerson, apiProjects });
 });
 
 app.set("port", process.env.PORT || 8001);

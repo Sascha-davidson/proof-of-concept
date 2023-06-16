@@ -52,9 +52,9 @@ function UpdateBackgroundPosition() {
     "translateX(" + contentPositions[currentPosition] + "%)";
 }
 
-setInterval(() => {
-  NextPosition();
-}, 60000);
+// setInterval(() => {
+//   NextPosition();
+// }, 60000);
 
 setInterval(() => {
   if (incomeTicker > 0) incomeTicker--;

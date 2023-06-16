@@ -1,8 +1,8 @@
 :root {
-  --small-gap: 0.5em;
-  --medium-gap: 1em;
-  --large-gap: 2em;
-  --extra-large-gap: 3em;
+  --small-gap: 0.5rem;
+  --medium-gap: 1rem;
+  --large-gap: 2rem;
+  --extra-large-gap: 3rem;
 
   --border-radius: 0.3em;
 }
@@ -158,7 +158,7 @@ header nav li button:is(:hover, :focus) {
   transition: all 2s ease-in-out;
 }
 
-.content {
+.content{
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
@@ -168,6 +168,12 @@ header nav li button:is(:hover, :focus) {
   flex-direction: column;
   gap: var(--medium-gap);
   overflow: hidden;
+
+  transform: translateX(-200%);
+}
+
+.content-container-js {
+  font-size: 1.5em;
 }
 
 .content-container-js .content-box-5 {
@@ -186,17 +192,14 @@ header nav li button:is(:hover, :focus) {
   width: 100%;
 }
 
-.content-container .content-box-1 .birth-day-hylight {
+.content-container-js .content-box-1 .birth-day-hylight {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.content-container-js {
-  font-size: 1.5em;
-}
 
-.content .person-container {
+.person-container {
   display: flex;
   flex-direction: column;
   gap: var(--small-gap);
@@ -205,7 +208,7 @@ header nav li button:is(:hover, :focus) {
   padding: 0.5em 0;
 }
 
-.content .person-avatar {
+.person-avatar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,20 +220,56 @@ header nav li button:is(:hover, :focus) {
   background-color: lightblue;
 }
 
-.content-container-js .content .person-birth-day {
+.content-container-js .person-birth-day {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 0.75em;
 }
 
-.content .person-birth-day span {
+.person-birth-day span {
   font-weight: 600;
   font-size: 1.2em;
 }
 
+.project-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--large-gap);
+
+}
+
+.project-container h2{
+  display: flex;
+  align-items: center;
+}
+
+.projects {
+  display: flex;
+  width: 100%;
+  gap: var(--medium-gap);
+
+}
+
+.projects .project-date {
+  width: x;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects .project-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+}
+
+.projects .project-content span {
+  font-size: 0.75em;
+}
+
 @media (min-width: 435px) {
-  .content-container-js .content .person-birth-day {
+  .content-container-js .person-birth-day {
     font-size: 1em;
   }
 }
@@ -271,23 +310,27 @@ header nav li button:is(:hover, :focus) {
   }
 
   .content-container .content-box-1 {
+    flex-direction: row;
+  }
+
+  .content-container-js .content-box-1 {
     flex-direction: column;
   }
 
-  .content-container .content-box-1 .birth-day-hylight {
+  .content-container-js .content-box-1 .birth-day-hylight {
     align-items: flex-start;
     justify-content: flex-start;
   }
 
-  .content .person-container {
+  .person-container {
     flex-direction: row;
   }
 
-  .content .person-birth-day {
+  .person-birth-day {
     align-items: flex-start;
   }
 
-  .content-container-js .content .person-birth-day {
+  .content-container-js .person-birth-day {
     align-items: flex-start;
   }
 }
@@ -345,11 +388,15 @@ header nav li button:is(:hover, :focus) {
     padding-top: 0;
   }
 
-  .content-container .content-box-1{
+  .content-container .content-box-1 {
+    flex-direction: column;
+  }
+
+  .content-container-js .content-box-1 {
     flex-direction: row;
   }
 
-  .content-container .content-box-1 .birth-day-hylight {
+  .content-container-js .content-box-1 .birth-day-hylight {
     align-items: center;
     justify-content: center;
   }

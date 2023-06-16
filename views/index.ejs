@@ -156,59 +156,98 @@
                 <h2>eerst volgende jarige</h2>
             </div>
             <div class="person">
-                <% if(apiPerson != null && apiPerson != undefined) { %>
-                    <% apiPerson.data.forEach(data=> { %>
+                <% apiPerson.data.forEach(data=> { %>
 
-                        <div class="person-container">
-                            <div class="person-avatar">
-                                <% if (data.avatar) { %>
-                                    <svg version="1.1" x="0px" y="0px" viewBox="0 0 100 100" xml:space="preserve">
-                                        <path d="M85.9,93.7C80,95.3,68.2,100,50.1,100c-18.2,0-30-4.6-35.9-6.2c-5.9-1.6-5.4-3.6-3-19.8c2.4-16.2,8.3-18.7,14-20.1
+                    <div class="person-container">
+                        <div class="person-avatar">
+                            <% if (data.avatar) { %>
+                                <svg version="1.1" x="0px" y="0px" viewBox="0 0 100 100" xml:space="preserve">
+                                    <path d="M85.9,93.7C80,95.3,68.2,100,50.1,100c-18.2,0-30-4.6-35.9-6.2c-5.9-1.6-5.4-3.6-3-19.8c2.4-16.2,8.3-18.7,14-20.1
         c5.7-1.4,7.3-3.3,7.3-3.3s4.3,7.9,17.6,7.9c13.2,0,17.6-7.9,17.6-7.9s1.7,1.9,7.3,3.3c5.7,1.4,11.6,3.9,14,20.1
         C91.4,90.1,91.8,92.2,85.9,93.7z" />
-                                        <path
-                                            d="M50.1,0C29.1,0,28.6,12,28.6,26.7c0,14.8,9.6,26.7,21.5,26.7c11.9,0,21.5-12,21.5-26.7C71.6,12,71,0,50.1,0z M53,47h-5.8
+                                    <path
+                                        d="M50.1,0C29.1,0,28.6,12,28.6,26.7c0,14.8,9.6,26.7,21.5,26.7c11.9,0,21.5-12,21.5-26.7C71.6,12,71,0,50.1,0z M53,47h-5.8
         v-5.8H53V47z M62.2,21c-0.9,1.5-2.5,3.4-5,5.6c-1.7,1.5-2.8,2.6-3.3,3.3c-0.5,0.7-0.9,1.5-1.1,2.4c-0.2,0.9-0.4,2.4-0.4,4.4h-4.9
         c0-0.7,0-1.2,0-1.5c0-2,0.3-3.8,0.9-5.2c0.4-1.1,1.1-2.2,2-3.3c0.7-0.8,1.9-2,3.7-3.6c1.8-1.6,2.9-2.8,3.4-3.7
         c0.5-0.9,0.8-1.9,0.8-3.1c0-2-0.8-3.7-2.3-5.2c-1.6-1.5-3.5-2.3-5.7-2.3c-2.2,0-4,0.7-5.5,2c-1.5,1.4-2.4,3.5-2.9,6.4l-5.3-0.6
         c0.5-3.9,1.9-6.9,4.2-8.9c2.3-2.1,5.4-3.1,9.3-3.1c4.1,0,7.3,1.1,9.7,3.3c2.4,2.2,3.6,4.9,3.6,8C63.5,17.8,63.1,19.4,62.2,21z" />
-                                    </svg>
-                                    <% } else { %>
-                                        <%= data.avatar.initials %>
+                                </svg>
+                                <% } else { %>
+                                    <%= data.avatar.initials %>
 
-                                            <% } %>
-                            </div>
+                                        <% } %>
+                        </div>
 
-                            <div class="person-birth-day">
-                                <% if (data.full_name) { %>
+                        <div class="person-birth-day">
+                            <% if (data.full_name) { %>
+                                <p>
                                     <%= data.full_name %>
                                         <% } else { %>
                                             no name
                                             <% } %>
-                                                <div>
-                                                    wordt
+                                </p>
+                                <div>
+                                    wordt
 
-                                                    <% if (data.date_of_birth) { %>
-                                                        <%= data.date_of_birth.slice(5, 10) %>
-                                                            <% } else { %>
-                                                                prive
-                                                                <% } %>
-                                                                    <span>leeftijd</span>
-                                                </div>
-                            </div>
+                                    <% if (data.date_of_birth) { %>
+                                        <p>
+                                            <%= data.date_of_birth.slice(5, 10) %>
+                                                <% } else { %>
+                                                    prive
+                                                    <% } %>
+                                        </p>
+                                        <p><span>leeftijd</span></p>
+                                </div>
                         </div>
-
-                        <% }) %>
-                            <% } %>
-
+                    </div>
+                    <% }) %>
             </div>
         </div>
         <div class="content-box-2 content"></div>
-        <div class="content-box-3 content"></div>
+        <div class="content-box-3 content">
+            <div class="project-container">
+                <h2>Nieuwste projecten</h2>
+                <% apiProjects.data.forEach(data=> { %>
+                    <div class="projects">
+                        <div class="project-date">
+                            <% if (data.start_date) { %>
+                                <%= data.start_date.slice(5, 10) %>
+                                    <% } else { %>
+                                        undefiend
+                                        <% } %>
+                        </div>
+                        <div class="project-content">
+                            <% if (data.name) { %>
+                                <%= data.name %>
+                                    <% } else { %>
+                                        undefiend
+                                        <% } %>
+                                            <span>
+                                                <p>
+                                                    <% if (data.organization.name) { %>
+                                                        <%= data.organization.name %>
+                                                            <% } else { %>
+                                                                undefiend
+                                                                <% } %>
+                                                </p>
+
+                                                <p> opdrachtnemer
+                                                    <% if (data.project_manager.name) { %>
+                                                        <%= data.project_manager.name %>
+                                                            <% } else { %>
+                                                                undefiend
+                                                                <% } %>
+                                                </p>
+                                            </span>
+
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
         <div class="content-box-4 content"></div>
         <div class="content-box-5 content"></div>
     </div>
-
     </div>
     <div class="background">
     </div>
