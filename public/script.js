@@ -3,15 +3,29 @@ const background = document.querySelector(`body > .background`);
 const content = document.querySelector(`.content-container`);
 const displayTime = document.querySelector(`.display-time`);
 const nav = document.querySelector(`header nav`);
-const nextSlide = document.querySelector(`.menu-text p`);
+const nextSlide = document.querySelector(`.menu-text h1`);
 const contentContainer = document.querySelector(`#content-container`);
+const buttons = document.querySelectorAll("button");
 
-let backgoundPositions = [0, 25, 50, 75, 100];
-let contentPositions = [-0, -20, -40, -60, -80];
+let backgoundPositions = [0, 50, 100,];
+let contentPositions = [-0, -33.3, -66.66,];
 let currentPosition = 0;
-let menuBackgroundPositions = [0, 100, 200, 300, 400];
+let menuBackgroundPositions = [0, 100, 200,];
+let pageLoopInterval;
+let timerInterval;
 
 var incomeTicker = 60;
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", () => {
+    SetPosition(i);
+    clearInterval(pageLoopInterval)
+    clearInterval(timerInterval)
+    if (nextSlide) {
+      nextSlide.hidden = true;
+    }
+  })
+}
 
 if (contentContainer) {
   contentContainer.classList.add("content-container-js");
@@ -52,11 +66,12 @@ function UpdateBackgroundPosition() {
     "translateX(" + contentPositions[currentPosition] + "%)";
 }
 
-// setInterval(() => {
-//   NextPosition();
-// }, 60000);
 
-setInterval(() => {
+pageLoopInterval = setInterval(() => {
+  NextPosition();
+}, 60000);
+
+timerInterval = setInterval(() => {
   if (incomeTicker > 0) incomeTicker--;
   document.getElementById("incomeTicker").innerHTML =
     "Next slide: " + incomeTicker + " seconds";

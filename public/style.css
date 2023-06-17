@@ -4,7 +4,7 @@
   --large-gap: 2rem;
   --extra-large-gap: 3rem;
 
-  --border-radius: 0.3em;
+  --border-radius: 0.5rem;
 }
 
 *,
@@ -40,20 +40,19 @@ body > .background {
   background: rgb(122, 241, 176);
   background: linear-gradient(
     315deg,
-    rgba(135, 206, 235, 1) 0%,
-    rgba(197, 135, 235, 1) 20%,
-    rgba(209, 255, 127, 1) 40%,
-    rgba(255, 75, 127, 1) 60%,
-    rgba(122, 241, 176, 1) 80%,
-    rgba(122, 228, 241, 1) 100%
+    rgba(255, 75, 127, 1) 0%,
+    rgba(209, 255, 127, 1) 33.33%,
+    rgba(122, 241, 176, 1) 66.66%,
+    rgba(135, 206, 235, 1) 100%
   );
+
   position: absolute;
   height: 100%;
   width: 100vw;
   top: 0;
   left: 0;
   z-index: -1;
-  background-size: 500% 500%;
+  background-size: 300% 300%;
   transition: all 2s ease-in-out;
 }
 
@@ -85,6 +84,7 @@ header .logo-container svg {
 
 header nav {
   width: 100%;
+  height: 100%;
 }
 
 header .menu-text {
@@ -101,7 +101,7 @@ header .menu-text {
 
 header nav ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   /* aspect-ratio: 5/1; */
   width: fit-content;
   justify-content: space-between;
@@ -119,7 +119,7 @@ header nav ul > .background {
   border-radius: var(--border-radius);
   position: absolute;
   height: 100%;
-  width: 20%;
+  width: 33.33%;
   top: 0;
   left: 0;
   transition: all 2s ease-in-out;
@@ -152,13 +152,13 @@ header nav li button:is(:hover, :focus) {
 }
 
 .content-container-js {
-  width: 500%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 300%;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 4rem;
   transition: all 2s ease-in-out;
 }
 
-.content{
+.content {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
@@ -168,19 +168,9 @@ header nav li button:is(:hover, :focus) {
   flex-direction: column;
   gap: var(--medium-gap);
   overflow: hidden;
-
-  transform: translateX(-200%);
 }
-
 .content-container-js {
   font-size: 1.5em;
-}
-
-.content-container-js .content-box-5 {
-  grid-column-start: unset;
-  grid-column-end: unset;
-  grid-row-start: unset;
-  grid-row-end: unset;
 }
 
 .content-container .content-box-1 {
@@ -198,6 +188,11 @@ header nav li button:is(:hover, :focus) {
   justify-content: center;
 }
 
+.content-container .person-birth-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .person-container {
   display: flex;
@@ -232,23 +227,30 @@ header nav li button:is(:hover, :focus) {
   font-size: 1.2em;
 }
 
-.project-container{
+.project-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: var(--large-gap);
-
 }
 
-.project-container h2{
+.content-container-js .project-container {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-container h2 {
   display: flex;
   align-items: center;
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .projects {
   display: flex;
   width: 100%;
   gap: var(--medium-gap);
-
 }
 
 .projects .project-date {
@@ -284,7 +286,7 @@ header nav li button:is(:hover, :focus) {
   }
 }
 
-@media (min-width: 850px) {
+@media (min-width: 450px) {
   header {
     gap: var(--medium-gap);
   }
@@ -309,10 +311,6 @@ header nav li button:is(:hover, :focus) {
     width: auto;
   }
 
-  .content-container .content-box-1 {
-    flex-direction: row;
-  }
-
   .content-container-js .content-box-1 {
     flex-direction: column;
   }
@@ -320,6 +318,10 @@ header nav li button:is(:hover, :focus) {
   .content-container-js .content-box-1 .birth-day-hylight {
     align-items: flex-start;
     justify-content: flex-start;
+  }
+
+  .content-container .person-birth-day {
+    align-items: flex-start;
   }
 
   .person-container {
@@ -352,7 +354,7 @@ header nav li button:is(:hover, :focus) {
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1150px) {
   header {
     flex-direction: row;
   }
@@ -360,7 +362,7 @@ header nav li button:is(:hover, :focus) {
   header nav {
     height: 91px;
     width: fit-content;
-    aspect-ratio: 5/1;
+    aspect-ratio: 3/1;
     max-height: unset;
   }
 
@@ -375,7 +377,6 @@ header nav li button:is(:hover, :focus) {
 
   header nav li svg {
     height: auto;
-    min-height: 8var (--border-radius);
   }
 
   .content-container {
@@ -386,6 +387,10 @@ header nav li button:is(:hover, :focus) {
     height: 100%;
     padding: 2rem;
     padding-top: 0;
+  }
+
+  .content-container-js {
+    font-size: 2.2em;
   }
 
   .content-container .content-box-1 {
@@ -409,8 +414,8 @@ header nav li button:is(:hover, :focus) {
   }
 
   .content-container-js {
-    width: 500%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 300%;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 4rem;
     transition: all 2s ease-in-out;
   }
