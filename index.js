@@ -7,11 +7,13 @@ const baceUrl = "https://demofdnd.simplicate.nl/api/v2";
 const crm = `/crm`
 const sales = `/sales`
 const projects = `/projects`
+const hrm = `/hrm`
 
 const organizations = `/organization`;
 const person = `/person`;
 const sale = `/sales`
 const project = `/project`
+const absence = `/absence`
 
 var myHeaders = new Headers();
 myHeaders.append("Authentication-Key", process.env.simplicateApiKey);

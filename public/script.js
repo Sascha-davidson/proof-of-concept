@@ -7,10 +7,10 @@ const nextSlide = document.querySelector(`.menu-text h1`);
 const contentContainer = document.querySelector(`#content-container`);
 const buttons = document.querySelectorAll("button");
 
-let backgoundPositions = [0, 50, 100,];
-let contentPositions = [-0, -33.3, -66.66,];
+let backgoundPositions = [0, 25, 50, 75, 100,];
+let contentPositions = [-0, -20, -40, -60, -80,];
 let currentPosition = 0;
-let menuBackgroundPositions = [0, 100, 200,];
+let menuBackgroundPositions = [0, 100, 200, 300, 400,];
 let pageLoopInterval;
 let timerInterval;
 

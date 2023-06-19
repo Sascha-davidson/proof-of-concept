@@ -1,3 +1,111 @@
+@font-face {
+  font-family: WorkSans-black;
+  src: url(/Work_Sans/WorkSans-Black.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-Bold;
+  src: url(/Work_Sans/WorkSans-Bold.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-ExtraBold;
+  src: url(/Work_Sans/WorkSans-ExtraBold.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-ExtraLight;
+  src: url(/Work_Sans/WorkSans-ExtraLight.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-Light;
+  src: url(/Work_Sans/WorkSans-Light.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-Medium;
+  src: url(/Work_Sans/WorkSans-Medium.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-Regular;
+  src: url(/Work_Sans/WorkSans-Regular.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-SemiBold;
+  src: url(/Work_Sans/WorkSans-SemiBold.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-Thin;
+  src: url(/Work_Sans/WorkSans-Thin.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-blackItalic;
+  src: url(/Work_Sans/WorkSans-BlackItalic.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-BoldItalic;
+  src: url(/Work_Sans/WorkSans-BoldItalic.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-ExtraBoldItalic;
+  src: url(/Work_Sans/WorkSans-ExtraBoldItalic.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-ExtraLightItalic;
+  src: url(/Work_Sans/WorkSans-ExtraLightItalic.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-LightItalic;
+  src: url(/Work_Sans/WorkSans-LightItalic.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-MediumItalic;
+  src: url(/Work_Sans/WorkSans-MediumItalic.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-RegularItalic;
+  src: url(/Work_Sans/WorkSans-RegularItalic.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-SemiBoldItalic;
+  src: url(/Work_Sans/WorkSans-SemiBoldItalic.ttf);
+  font-display: swap
+}
+
+@font-face {
+  font-family: WorkSans-ThinItalic;
+  src: url(/Work_Sans/WorkSans-ThinItalic.ttf);
+  font-display: swap
+}
+
 :root {
   --small-gap: 0.5rem;
   --medium-gap: 1rem;
@@ -22,7 +130,6 @@
 html,
 body {
   font-size: var(--font-size);
-  font-family: var(--font-family);
   overflow-x: hidden;
 }
 
@@ -33,26 +140,29 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: WorkSans-Regular;
 }
 
 body > .background {
-  background: rgb(122, 241, 176);
+  background: rgb(116, 171, 226);
   background: linear-gradient(
-    315deg,
-    rgba(255, 75, 127, 1) 0%,
-    rgba(209, 255, 127, 1) 33.33%,
-    rgba(122, 241, 176, 1) 66.66%,
-    rgba(135, 206, 235, 1) 100%
+    135deg,
+    rgba(116, 171, 226, 1) 0%,/*simplicate start color*/
+    rgba(143, 91, 160, 1) 20%,/*crm*/
+    rgba(234, 90, 132, 1) 40%,/*HRM*/
+    rgba(227, 59, 42, 1) 60%,/*sales*/
+    rgba(242, 156, 23, 1) 80%,/*projects*/
+    rgba(53, 36, 132, 1) 100%/*uren*/
   );
 
+  background: linear-gradient(135deg, rgba(116,171,226,1) 0%, rgba(53,36,132,1) 20%, rgba(143,91,160,1) 40%, rgba(234,90,132,1) 60%, rgba(227,59,42,1) 80%, rgba(242,156,23,1) 100%);
   position: absolute;
   height: 100%;
   width: 100vw;
   top: 0;
   left: 0;
   z-index: -1;
-  background-size: 300% 300%;
+  background-size: 500% 500%;
   transition: all 2s ease-in-out;
 }
 
@@ -95,13 +205,9 @@ header .menu-text {
   padding: 0.5em;
 }
 
-/* header .menu-text {
-
-} */
-
 header nav ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   /* aspect-ratio: 5/1; */
   width: fit-content;
   justify-content: space-between;
@@ -119,7 +225,7 @@ header nav ul > .background {
   border-radius: var(--border-radius);
   position: absolute;
   height: 100%;
-  width: 33.33%;
+  width: 20%;
   top: 0;
   left: 0;
   transition: all 2s ease-in-out;
@@ -153,7 +259,7 @@ header nav li button:is(:hover, :focus) {
 
 .content-container-js {
   width: 300%;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 4rem;
   transition: all 2s ease-in-out;
 }
@@ -173,16 +279,16 @@ header nav li button:is(:hover, :focus) {
   font-size: 1.5em;
 }
 
-.content-container .content-box-1 {
+.content-container .content-box-2 {
   display: flex;
   flex-direction: column;
 }
 
-.content-container .content-box-1 > div {
+.content-container .content-box-2 > div {
   width: 100%;
 }
 
-.content-container-js .content-box-1 .birth-day-hylight {
+.content-container-js .content-box-2 .birth-day-hylight {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,10 +360,11 @@ header nav li button:is(:hover, :focus) {
 }
 
 .projects .project-date {
-  width: x;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  aspect-ratio: 1;
 }
 
 .projects .project-content {
@@ -276,16 +383,6 @@ header nav li button:is(:hover, :focus) {
   }
 }
 
-@media (min-width: 640px) {
-  header nav li svg {
-    height: 3em;
-  }
-
-  .content-container-js {
-    font-size: 2em;
-  }
-}
-
 @media (min-width: 450px) {
   header {
     gap: var(--medium-gap);
@@ -298,10 +395,10 @@ header nav li button:is(:hover, :focus) {
   header .logo-container svg {
     height: 100%;
     min-height: 85px;
+    max-height: 100px;
   }
 
   header .page-title {
-    flex-direction: row;
     justify-content: space-between;
     width: 100%;
   }
@@ -311,11 +408,11 @@ header nav li button:is(:hover, :focus) {
     width: auto;
   }
 
-  .content-container-js .content-box-1 {
+  .content-container-js .content-box-2 {
     flex-direction: column;
   }
 
-  .content-container-js .content-box-1 .birth-day-hylight {
+  .content-container-js .content-box-2 .birth-day-hylight {
     align-items: flex-start;
     justify-content: flex-start;
   }
@@ -334,6 +431,22 @@ header nav li button:is(:hover, :focus) {
 
   .content-container-js .person-birth-day {
     align-items: flex-start;
+  }
+}
+
+@media (min-width: 640px) {
+  header nav li svg {
+    height: 3em;
+  }
+
+  .content-container-js {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 850px) {
+  header .page-title {
+    flex-direction: row;
   }
 }
 
@@ -362,7 +475,7 @@ header nav li button:is(:hover, :focus) {
   header nav {
     height: 91px;
     width: fit-content;
-    aspect-ratio: 3/1;
+    aspect-ratio: 5/1;
     max-height: unset;
   }
 
@@ -391,17 +504,19 @@ header nav li button:is(:hover, :focus) {
 
   .content-container-js {
     font-size: 2.2em;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 
-  .content-container .content-box-1 {
+  .content-container .content-box-2 {
     flex-direction: column;
   }
 
-  .content-container-js .content-box-1 {
+  .content-container-js .content-box-2 {
     flex-direction: row;
   }
 
-  .content-container-js .content-box-1 .birth-day-hylight {
+  .content-container-js .content-box-2 .birth-day-hylight {
     align-items: center;
     justify-content: center;
   }
@@ -413,16 +528,14 @@ header nav li button:is(:hover, :focus) {
     grid-row-end: 3;
   }
 
-  .content-container-js {
-    width: 300%;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 4rem;
-    transition: all 2s ease-in-out;
+  .content-container-js .content-box-5 {
+    grid-column-start: unset;
+    grid-column-end: unset;
+    grid-row-start: unset;
+    grid-row-end: unset;
   }
-}
 
-@media (min-width: 2000px) {
-  .content-container-js .content-box-1 {
-    grid-template-columns: 1fr 1fr 1fr;
+  .content-container-js {
+    width: 500%;
   }
 }
