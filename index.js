@@ -15,6 +15,11 @@ const sale = `/sales`
 const project = `/project`
 const absence = `/absence`
 
+const smallLimit = `?limit=5`
+const mediumLimit = `?limit=10`
+const largeLimit = `?limit=15`
+const extraLargeLimit = `?limit=20`
+
 var myHeaders = new Headers();
 myHeaders.append("Authentication-Key", process.env.simplicateApiKey);
 myHeaders.append("Authentication-Secret", process.env.simplicateApiSecret);
@@ -35,7 +40,7 @@ fetch(baceUrl + crm + organizations, requestGetOptions)
   });
   
 let apiPerson;
-fetch(baceUrl + crm + person, requestGetOptions)
+fetch(baceUrl + crm + person + mediumLimit, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
     apiPerson = JSON.parse(response);
@@ -45,10 +50,20 @@ fetch(baceUrl + crm + person, requestGetOptions)
   });
   
 let apiProjects;
-  fetch(baceUrl + projects + project, requestGetOptions)
+  fetch(baceUrl + projects + project + mediumLimit, requestGetOptions)
   .then((response) => response.text())
   .then((response) => {
     apiProjects = JSON.parse(response);
+  })
+  .catch((error) => {
+    console.log("error", error);
+  });
+
+  let apiAbsence;
+  fetch(baceUrl + hrm + absence, requestGetOptions)
+  .then((response) => response.text())
+  .then((response) => {
+    apiAbsence = JSON.parse(response);
   })
   .catch((error) => {
     console.log("error", error);
@@ -61,7 +76,7 @@ app.set("views", "./views");
 app.use(express.static("public"));
 
 app.get("/", function (request, response) {
-  response.render("index", { apiOrganizations, apiPerson, apiProjects });
+  response.render("index", { apiOrganizations, apiPerson, apiProjects, apiAbsence });
 });
 
 app.set("port", process.env.PORT || 8001);

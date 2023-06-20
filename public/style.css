@@ -1,116 +1,116 @@
 @font-face {
   font-family: WorkSans-black;
   src: url(/Work_Sans/WorkSans-Black.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-Bold;
   src: url(/Work_Sans/WorkSans-Bold.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-ExtraBold;
   src: url(/Work_Sans/WorkSans-ExtraBold.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-ExtraLight;
   src: url(/Work_Sans/WorkSans-ExtraLight.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-Light;
   src: url(/Work_Sans/WorkSans-Light.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-Medium;
   src: url(/Work_Sans/WorkSans-Medium.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-Regular;
   src: url(/Work_Sans/WorkSans-Regular.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-SemiBold;
   src: url(/Work_Sans/WorkSans-SemiBold.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-Thin;
   src: url(/Work_Sans/WorkSans-Thin.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-blackItalic;
   src: url(/Work_Sans/WorkSans-BlackItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-BoldItalic;
   src: url(/Work_Sans/WorkSans-BoldItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-ExtraBoldItalic;
   src: url(/Work_Sans/WorkSans-ExtraBoldItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-ExtraLightItalic;
   src: url(/Work_Sans/WorkSans-ExtraLightItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-LightItalic;
   src: url(/Work_Sans/WorkSans-LightItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-MediumItalic;
   src: url(/Work_Sans/WorkSans-MediumItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-RegularItalic;
   src: url(/Work_Sans/WorkSans-RegularItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-SemiBoldItalic;
   src: url(/Work_Sans/WorkSans-SemiBoldItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 @font-face {
   font-family: WorkSans-ThinItalic;
   src: url(/Work_Sans/WorkSans-ThinItalic.ttf);
-  font-display: swap
+  font-display: swap;
 }
 
 :root {
   --small-gap: 0.5rem;
   --medium-gap: 1rem;
   --large-gap: 2rem;
-  --extra-large-gap: 3rem;
+  --extra-large-gap: 4rem;
 
   --border-radius: 0.5rem;
 }
@@ -140,36 +140,32 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  font-family: WorkSans-Regular;
+  font-family: WorkSans-Medium;
 }
 
 body > .background {
   background: rgb(116, 171, 226);
   background: linear-gradient(
     135deg,
-    rgba(116, 171, 226, 1) 0%,/*simplicate start color*/
-    rgba(143, 91, 160, 1) 20%,/*crm*/
-    rgba(234, 90, 132, 1) 40%,/*HRM*/
-    rgba(227, 59, 42, 1) 60%,/*sales*/
-    rgba(242, 156, 23, 1) 80%,/*projects*/
-    rgba(53, 36, 132, 1) 100%/*uren*/
+    rgba(53, 36, 132, 1) 0%,
+    rgba(143, 91, 160, 1) 33.33%,
+    rgba(234, 90, 132, 1) 66.66%,
+    rgba(242, 156, 23, 1) 100%
   );
-
-  background: linear-gradient(135deg, rgba(116,171,226,1) 0%, rgba(53,36,132,1) 20%, rgba(143,91,160,1) 40%, rgba(234,90,132,1) 60%, rgba(227,59,42,1) 80%, rgba(242,156,23,1) 100%);
   position: absolute;
   height: 100%;
   width: 100vw;
   top: 0;
   left: 0;
   z-index: -1;
-  background-size: 500% 500%;
+  background-size: 300% 300%;
   transition: all 2s ease-in-out;
 }
 
 h1 {
   font-size: 2em;
   white-space: wrap;
-  font-weight: 500;
+  font-weight: 300;
   font-size: clamp(1.5em, 6vw, 2em);
 }
 
@@ -198,16 +194,18 @@ header nav {
 }
 
 header .menu-text {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.2em;
   padding: 0.5em;
 }
 
+header .menu-text:not([hidden]) {
+  display: flex;
+}
 header nav ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   /* aspect-ratio: 5/1; */
   width: fit-content;
   justify-content: space-between;
@@ -225,7 +223,7 @@ header nav ul > .background {
   border-radius: var(--border-radius);
   position: absolute;
   height: 100%;
-  width: 20%;
+  width: 33.33%;
   top: 0;
   left: 0;
   transition: all 2s ease-in-out;
@@ -245,11 +243,15 @@ header nav li button:is(:hover, :focus) {
   background: rgba(255, 255, 255, 0.25);
 }
 
+header nav li svg {
+  height: 3em;
+}
+
 .content-container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: var(--large-gap);
   height: 100%;
   padding: 2rem;
   padding-top: 0;
@@ -259,45 +261,34 @@ header nav li button:is(:hover, :focus) {
 
 .content-container-js {
   width: 300%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 2.2em;
+  gap: var(--extra-large-gap);
   transition: all 2s ease-in-out;
+  font-size: 1.5em;
 }
 
 .content {
   width: 100%;
-  height: 100%;
+  height: fit-content;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: var(--border-radius);
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: var(--medium-gap);
+  display: grid;
+  row-gap: var(--medium-gap);
+  column-gap: var(--extra-large-gap);
+  grid-template-columns: 1fr;
   overflow: hidden;
 }
-.content-container-js {
-  font-size: 1.5em;
+.content-container-js .content {
+  min-height: 50vh;
+  min-height: 50svh;
 }
 
-.content-container .content-box-2 {
-  display: flex;
-  flex-direction: column;
-}
-
-.content-container .content-box-2 > div {
-  width: 100%;
-}
-
-.content-container-js .content-box-2 .birth-day-hylight {
+.content-container .content-title {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.content-container .person-birth-day {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .person-container {
@@ -306,7 +297,7 @@ header nav li button:is(:hover, :focus) {
   gap: var(--small-gap);
   align-items: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  padding: 0.5em 0;
+  padding: 1em 0;
 }
 
 .person-avatar {
@@ -317,7 +308,7 @@ header nav li button:is(:hover, :focus) {
   border-radius: 50em;
   aspect-ratio: 1;
   padding: 0.5rem;
-  width: 4em;
+  width: 3em;
   background-color: lightblue;
 }
 
@@ -325,10 +316,9 @@ header nav li button:is(:hover, :focus) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.75em;
 }
 
-.person-birth-day span {
+.person-birth-day b {
   font-weight: 600;
   font-size: 1.2em;
 }
@@ -343,76 +333,35 @@ header nav li button:is(:hover, :focus) {
   grid-template-columns: 1fr 1fr;
 }
 
-.project-container h2 {
-  display: flex;
-  align-items: center;
-
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-
 .projects {
-  display: flex;
   width: 100%;
   gap: var(--medium-gap);
-}
-
-.projects .project-date {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  aspect-ratio: 1;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5em 0;
 }
 
 .projects .project-content {
   display: flex;
   flex-direction: column;
   gap: var(--small-gap);
+  font-weight: 600;
 }
 
-.projects .project-content span {
+.content span {
   font-size: 0.75em;
+  font-weight: 300;
 }
 
-@media (min-width: 435px) {
-  .content-container-js .person-birth-day {
-    font-size: 1em;
-  }
-}
-
-@media (min-width: 450px) {
-  header {
-    gap: var(--medium-gap);
+@media (min-width: 640px) {
+  .content-container-js {
+    font-size: 2em;
   }
 
-  header .page-title {
-    gap: var(--medium-gap);
-  }
-
-  header .logo-container svg {
-    height: 100%;
-    min-height: 85px;
-    max-height: 100px;
-  }
-
-  header .page-title {
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  header nav ul {
-    justify-content: flex-end;
-    width: auto;
-  }
-
-  .content-container-js .content-box-2 {
+  .content-container-js .content-box-1 {
     flex-direction: column;
   }
 
-  .content-container-js .content-box-2 .birth-day-hylight {
+  .content-container-js .content-box-1 .content-title {
     align-items: flex-start;
     justify-content: flex-start;
   }
@@ -432,25 +381,58 @@ header nav li button:is(:hover, :focus) {
   .content-container-js .person-birth-day {
     align-items: flex-start;
   }
-}
 
-@media (min-width: 640px) {
-  header nav li svg {
-    height: 3em;
-  }
-
-  .content-container-js {
-    font-size: 2em;
+  .content-container .content-title {
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
+@media (min-width: 800px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
 
-@media (min-width: 850px) {
+  .content .content-title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .content-container-js .content {
+    grid-template-columns: 1fr;
+  }
+
+  .content-container-js .content .content-title {
+    grid-column-start: unset;
+    grid-column-end: unset;
+    grid-row-start: unset;
+    grid-row-end: unset;
+  }
+}
+
+@media (min-width: 920px) {
   header .page-title {
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1220px) {
+  .content-container-js .content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content-container-js .content .content-title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
+
+@media (min-width: 1200px) {
   html,
   body {
     overflow: hidden;
@@ -465,17 +447,14 @@ header nav li button:is(:hover, :focus) {
   body > .background {
     height: 100vh;
   }
-}
 
-@media (min-width: 1150px) {
   header {
     flex-direction: row;
   }
 
   header nav {
-    height: 91px;
     width: fit-content;
-    aspect-ratio: 5/1;
+    aspect-ratio: 3/1;
     max-height: unset;
   }
 
@@ -496,39 +475,22 @@ header nav li button:is(:hover, :focus) {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
     height: 100%;
     padding: 2rem;
     padding-top: 0;
   }
 
   .content-container-js {
-    font-size: 2.2em;
     gap: 4rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .content-container .content-box-2 {
-    flex-direction: column;
+  .content {
+    grid-template-columns: 1fr;
+    height: 100%;
   }
 
-  .content-container-js .content-box-2 {
-    flex-direction: row;
-  }
-
-  .content-container-js .content-box-2 .birth-day-hylight {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .content-box-5 {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
-  }
-
-  .content-container-js .content-box-5 {
+  .content-container .content-title {
     grid-column-start: unset;
     grid-column-end: unset;
     grid-row-start: unset;
@@ -536,6 +498,33 @@ header nav li button:is(:hover, :focus) {
   }
 
   .content-container-js {
-    width: 500%;
+    width: 300%;
+  }
+}
+
+@media (min-width: 1250px) {
+  .content-container-js .content-box-1 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .content-container-js .content-box-1 .content-title {
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+}
+@media (min-width: 1400px) {
+  .content {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 1800px) {
+  .content {
+    font-size: 1.4em;
   }
 }
