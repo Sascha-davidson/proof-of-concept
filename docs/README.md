@@ -23,7 +23,7 @@ met deze link kan je een video van mijn website downloaden en bekijken:<br>
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
-## ℹ️Beschrijving
+## ℹ️ Beschrijving
 Deze website is een Narrowcasting app. Dit is een website voor een specefiek publiek of een specefieke locatie (bijvoorbeeld: de schermen in een metro, het staat alleen in de metro en is alleen interesant voor de mensen die in de metro staan). Ik heb mijn website gemaakt met een geautomatiseerende functie die automaties tussen slide's switched. Dit heb ik gedaan zodat alles groter kan worden gedisplayed dan als ik de verschillende content pagina's naast elkaar staat (de no javascript variant).
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
