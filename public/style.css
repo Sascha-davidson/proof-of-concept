@@ -113,6 +113,19 @@
   --extra-large-gap: 4rem;
 
   --border-radius: 0.5rem;
+  --border-radius-rounded: 100%;
+
+  --primary-collor-500: rgba(53, 36, 132, 1);
+  --CRM-collor-500: rgba(143, 91, 160, 1);
+  --HRM-collor-500: rgba(234, 90, 132, 1);
+  --Sales-collor-500: rgba(227, 59, 42, 1);
+  --Projecten-collor-500: rgba(242, 156, 23, 1);
+  --Planning-collor-500: rgba(249, 199, 0, 1);
+  --Uren-collor-500: rgba(99, 179, 75, 1);
+  --Facturatie-collor-500: rgba(57, 150, 210, 1);
+  --Bi-collor-500: rgba(64, 107, 146, 1);
+
+  --background-color: rgba(255, 255, 255, 0.5);
 }
 
 *,
@@ -147,10 +160,10 @@ body > .background {
   background: rgb(116, 171, 226);
   background: linear-gradient(
     135deg,
-    rgba(53, 36, 132, 1) 0%,
-    rgba(143, 91, 160, 1) 33.33%,
-    rgba(234, 90, 132, 1) 66.66%,
-    rgba(242, 156, 23, 1) 100%
+    var(--primary-collor-500) 0%,
+    var(--CRM-collor-500) 33.33%,
+    var(--HRM-collor-500) 66.66%,
+    var(--Projecten-collor-500) 100%
   );
   position: absolute;
   height: 100%;
@@ -219,7 +232,7 @@ header nav li {
 }
 
 header nav ul > .background {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--background-color);
   border-radius: var(--border-radius);
   position: absolute;
   height: 100%;
@@ -271,7 +284,7 @@ header nav li svg {
 .content {
   width: 100%;
   height: fit-content;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--background-color);
   border-radius: var(--border-radius);
   padding: 2rem;
   display: grid;
@@ -294,7 +307,7 @@ header nav li svg {
 .person-container {
   display: flex;
   flex-direction: column;
-  gap: var(--large-gap);
+  gap: var(--small-gap);
   align-items: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
   padding: 1em 0;
@@ -305,10 +318,10 @@ header nav li svg {
   justify-content: center;
   align-items: center;
   gap: var(--medium-gap);
-  border-radius: 50em;
+  border-radius: var(--border-radius-rounded);
   aspect-ratio: 1;
   padding: 0.5rem;
-  width: 3em;
+  width: 6em;
   background-color: lightblue;
 }
 
@@ -318,9 +331,31 @@ header nav li svg {
   align-items: center;
 }
 
+.person-birth-day p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .person-birth-day b {
   font-weight: 600;
   font-size: 1.2em;
+}
+
+.content-box-2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--large-gap);
+}
+
+.content-box-2 .empty-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-box-2 .empty-list p {
+  text-align: center;
 }
 
 .project-container {
@@ -347,9 +382,14 @@ header nav li svg {
   font-weight: 600;
 }
 
-.content span {
+.content .age {
   font-size: 0.75em;
   font-weight: 300;
+}
+@media (min-width: 480px) {
+  .person-birth-day p {
+    display: block;
+  }
 }
 
 @media (min-width: 640px) {
@@ -372,6 +412,11 @@ header nav li svg {
 
   .person-container {
     flex-direction: row;
+    gap: var(--large-gap);
+  }
+
+  .person-avatar {
+    width: 3em;
   }
 
   .person-birth-day {
@@ -385,6 +430,10 @@ header nav li svg {
   .content-container .content-title {
     align-items: flex-start;
     justify-content: flex-start;
+  }
+
+  .content-box-2 .empty-list p {
+    text-align: unset;
   }
 }
 @media (min-width: 800px) {
@@ -513,6 +562,14 @@ header nav li svg {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+  }
+
+  .content-box-2 .empty-list {
+    align-items: center;
+  }
+
+  .content-box-2 {
+    gap: unset;
   }
 }
 

@@ -48,6 +48,17 @@ fetch(baceUrl + crm + person + mediumLimit, requestGetOptions)
   .catch((error) => {
     console.log("error", error);
   });
+
+  let apiAbsence;
+  fetch(baceUrl + hrm + absence, requestGetOptions)
+  .then((response) => response.text())
+  .then((response) => {
+    apiAbsence = JSON.parse(response);
+    console.log(apiAbsence);
+  })
+  .catch((error) => {
+    console.log("error", error);
+  });
   
 let apiProjects;
   fetch(baceUrl + projects + project + mediumLimit, requestGetOptions)
@@ -59,24 +70,13 @@ let apiProjects;
     console.log("error", error);
   });
 
-  let apiAbsence;
-  fetch(baceUrl + hrm + absence, requestGetOptions)
-  .then((response) => response.text())
-  .then((response) => {
-    apiAbsence = JSON.parse(response);
-  })
-  .catch((error) => {
-    console.log("error", error);
-  });
-
-
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
 app.use(express.static("public"));
 
 app.get("/", function (request, response) {
-  response.render("index", { apiOrganizations, apiPerson, apiProjects, apiAbsence });
+  response.render("index", { apiPerson, apiProjects, apiAbsence });
 });
 
 app.set("port", process.env.PORT || 8001);

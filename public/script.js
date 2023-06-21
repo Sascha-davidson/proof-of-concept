@@ -5,26 +5,31 @@ const displayTime = document.querySelector(`.display-time`);
 const nav = document.querySelector(`header nav`);
 const nextSlide = document.querySelector(`.menu-text`);
 const contentContainer = document.querySelector(`#content-container`);
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(`button`);
+const CurrentYear = document.querySelectorAll(`.current-year`);
 
-let backgoundPositions = [0, 50, 100,];
-let contentPositions = [-0, -33.33, -66.66,];
+let backgoundPositions = [0, 50, 100];
+let contentPositions = [-0, -33.33, -66.66];
 let currentPosition = 0;
-let menuBackgroundPositions = [0, 100, 200,];
+let menuBackgroundPositions = [0, 100, 200];
 let pageLoopInterval;
 let timerInterval;
+let incomeTicker = 60;
+let date = new Date();
 
-var incomeTicker = 60;
+CurrentYear.forEach((year) => {
+  year.innerHTML = date.getFullYear();
+});
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", () => {
     SetPosition(i);
-    clearInterval(pageLoopInterval)
-    clearInterval(timerInterval)
+    clearInterval(pageLoopInterval);
+    clearInterval(timerInterval);
     if (nextSlide) {
       nextSlide.hidden = true;
     }
-  })
+  });
 }
 
 if (contentContainer) {
@@ -65,7 +70,6 @@ function UpdateBackgroundPosition() {
   content.style.transform =
     "translateX(" + contentPositions[currentPosition] + "%)";
 }
-
 
 pageLoopInterval = setInterval(() => {
   NextPosition();

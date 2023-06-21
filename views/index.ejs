@@ -174,19 +174,23 @@
                                     <% } else { %>
                                         no name
                                         <% } %>
-                                            <b>20 jaar</b>
+                                            <b>
+                                                <%= (new Date().getFullYear() - data.date_of_birth.slice(0, 4)) %> jaar
+                                            </b>
 
                             </p>
                             <span class="age">
 
-                                    is jarig op:
+                                is jarig op:
 
-                                    <% if (data.date_of_birth) { %>
-                                        <%= data.date_of_birth.slice(8, 10) %>-<%= data.date_of_birth.slice(6, 7) %>-<%=
-                                                    data.date_of_birth.slice(0, 4) %>
-                                                    <% } else { %>
-                                                        prive
-                                                        <% } %>
+                                <% if (data.date_of_birth) { %>
+                                    <%= data.date_of_birth.slice(8, 10) %>-<%= data.date_of_birth.slice(6, 7) %>-<span
+                                                class="current-year">
+                                                <%= data.date_of_birth.slice(0, 4) %>
+                                            </span>
+                                            <% } else { %>
+                                                prive
+                                                <% } %>
                             </span>
                     </div>
                 </div>
@@ -197,6 +201,23 @@
             <div class="content-title">
                 <h2>absent</h2>
             </div>
+            <% if (apiAbsence !=undefined && apiAbsence.data.length> 0) { %>
+                <% apiAbsence.data.forEach(data=> { %>
+                    <div class="abcente-list">
+                        <% if (data.full_name) { %>
+                            <%= data.full_name %>
+                                <% } else { %>
+                                    Unlisted
+                                    <% } %>
+                    </div>
+                    <% }) %>
+
+                        <% } else { %>
+                            <div class="empty-list">
+                                <p>Momenteel in niemand afwezig</p>
+                            </div>
+                            <% } %>
+
         </div>
 
         <div class="content-box-4 content">
@@ -207,19 +228,20 @@
                 <div class="projects">
                     <div class="project-content">
 
-                        <span class="project-date">
+                        <span class="project-date age">
                             <% if (data.start_date) { %>
-                                <%= data.start_date.slice(8, 10) %>-<%= data.start_date.slice(6, 7) %>-<%= data.start_date.slice(0, 4) %>
-                                    <% } else { %>
-                                        undefiend
-                                        <% } %>
+                                <%= data.start_date.slice(8, 10) %>-<%= data.start_date.slice(6, 7) %>-<%=
+                                            data.start_date.slice(0, 4) %>
+                                            <% } else { %>
+                                                undefiend
+                                                <% } %>
                         </span>
                         <% if (data.name) { %>
                             <%= data.name %>
                                 <% } else { %>
                                     undefiend
                                     <% } %>
-                                        <span>
+                                        <span class="age">
                                             <p>
                                                 <% if (data.organization.name) { %>
                                                     <%= data.organization.name %>
