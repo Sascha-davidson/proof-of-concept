@@ -9,12 +9,7 @@ https://tiny-teal-rattlesnake-tutu.cyclic.app/
 
 <img width="100%" alt="foto van mijn website" src="https://github.com/Sascha-davidson/proof-of-concept/assets/112861160/43ee6833-4fba-4b6c-9cfe-3832481d075a">
 
-<video autoplay>
-  <source src="movie.mp4" type="video/Narrowcasting-app-Simplicate-onSound.mp4">
-Your browser does not support the video tag.
-</video>
-
-<video src='video/Narrowcasting-app-Simplicate-onSound.mp4' width=180/>
+met deze link kan je een video van mijn website downloaden en bekijken: https://github.com/Sascha-davidson/proof-of-concept/blob/main/public/video/Narrowcasting%20app%20Simplicate%20-%20noSound.mp4
 
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
