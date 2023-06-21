@@ -9,11 +9,9 @@ https://tiny-teal-rattlesnake-tutu.cyclic.app/
 
 <img width="100%" alt="foto van mijn website" src="https://github.com/Sascha-davidson/proof-of-concept/assets/112861160/43ee6833-4fba-4b6c-9cfe-3832481d075a">
 
-<video autoplay>
-  <source src="movie.mp4" type="video/Narrowcasting-app-Simplicate-noSound.mp4">
-Your browser does not support the video tag.
-</video>
-
+met deze link kan je een video van mijn website downloaden en bekijken:<br>
+[Narrowcasting app Simplicate with music](https://youtu.be/oSiIXnlGUhQ)  
+[Narrowcasting app Simplicate no music](https://www.youtube.com/watch?v=sLWltn3Ys2w)
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
 ## 📦 Inhoudsopgave
@@ -25,7 +23,7 @@ Your browser does not support the video tag.
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
-## ℹ️Beschrijving
+## ℹ️ Beschrijving
 Deze website is een Narrowcasting app. Dit is een website voor een specefiek publiek of een specefieke locatie (bijvoorbeeld: de schermen in een metro, het staat alleen in de metro en is alleen interesant voor de mensen die in de metro staan). Ik heb mijn website gemaakt met een geautomatiseerende functie die automaties tussen slide's switched. Dit heb ik gedaan zodat alles groter kan worden gedisplayed dan als ik de verschillende content pagina's naast elkaar staat (de no javascript variant).
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
