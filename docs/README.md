@@ -38,7 +38,7 @@ De belangrijkste kenmerk is dat deze website geautomatiseerd is. Dit betekend da
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
 
 ## 📥 Installatie
-Zorg dat je NodeJS geïnstalleerd hebt. Clone deze repository. Open een terminal. Zorg dat je in het juiste pad zit van dit project. Voer de commando `npm install` uit. Wanneer deze klaar is kun je de applicatie starten door de commando `npm run dev` uit te voeren. De applicatie wordt gehost op http://localhost:8001/
+Zorg dat je NodeJS geïnstalleerd hebt. Clone deze repository. Open een terminal. Zorg dat je in het juiste pad zit van dit project. Voer de commando `npm install` uit. Wanneer deze klaar is kun je de applicatie starten door de commando `npm run dev` uit te voeren. De applicatie wordt gehost op http://localhost:8001/, deze kan je aanpassen in index.js naar een eigen host nummer.
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
 
 ## 🌍 Bronnen
